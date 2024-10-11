@@ -1,7 +1,8 @@
+ import css from './page.module.css'
 
 const BlogId = () => {
   return (
-    <div>BlogId</div>
+    <div className={css.container }>BlogId</div>
   )
 }
 
