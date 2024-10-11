@@ -24,3 +24,8 @@
       cursor: pointer;
       border-radius: 3px;
     }
+
+   .logout:hover {
+    background-color: gold;
+    color: #000;
+   } 
