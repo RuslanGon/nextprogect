@@ -1,7 +1,8 @@
+import css from './page.module.css'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={css.container}>
         <div>2023 My App. All rights reserved</div>
         <div></div>
     </footer>

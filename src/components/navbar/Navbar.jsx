@@ -1,4 +1,5 @@
 import Link from "next/link"
+import css from './page.module.css'
 
 const links = [
     {
@@ -35,7 +36,7 @@ const links = [
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={css.container}>
         <Link href='/'>My App</Link>
         <div>
             {links.map(link => (
