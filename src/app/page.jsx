@@ -1,10 +1,15 @@
-
-import css from './page.module.css'
+import css from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={css.container}>
-      Home
-    </div>
+    <main className={css.container}>
+      <div className={css.item}>
+        <h1 className={css.title}> The Future of AI in the next few years</h1>
+        <p className={css.desc}>
+          Turning your Idea into Reality. We bring together the teams from the
+          global tech industry.
+        </p>
+      </div>
+    </main>
   );
 }
