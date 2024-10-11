@@ -10,6 +10,7 @@ export default function Home() {
           global tech industry.
         </p>
       </div>
+      
     </main>
   );
 }
