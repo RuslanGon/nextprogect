@@ -4,42 +4,39 @@ import Button from '@/components/Button/Button'
 import { items } from './data.js'
 import { notFound } from 'next/navigation';
 
-const getData = (cat) =>{
-  const data = items[cat]
+// const getData = (cat) =>{
+//   const data = items[cat]
 
-  if (data){
-    data
-  }
-  return notFound()
-}
+//   if (data){
+//     data
+//   }
+//   return notFound()
+// }
 
 
 const Category = ({params}) => {
   // console.log(params);
-  const data = getData(params.category)
+  // const data = getData(params.category)
   return (
     <div className={css.container}>
-      <h1 className={css.catTitle}>{params.category}</h1>
-      {data.map((item)=>(
-      <div className={css.item} key={item.id}>
+      <h1 className={css.catTitle}></h1>
+      <div className={css.item} >
         <div className={css.content}>
-          <h1 className={css.title}>{item.title}</h1>
-          <p className={css.desc}>{item.desc}</p>
+          <h1 className={css.title}></h1>
+          <p className={css.desc}></p>
           <Button text="See More" url="#" />
         </div>
         <div className={css.imgContainer}>
           <Image
             className={css.img}
             fill={true}
-            src={item.image}
-             alt={item.title}
+            src=''
+             alt=''
           />
         </div>
       </div>
 
-      ))}
-
-
+      
     </div>
   )
 }
