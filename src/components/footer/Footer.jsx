@@ -1,7 +1,10 @@
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+        <div>2023 My App. All rights reserved</div>
+        <div></div>
+    </footer>
   )
 }
 
