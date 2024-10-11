@@ -1,8 +1,8 @@
-
+import css from './page.module.css'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div className={css.container}>Contact</div>
   )
 }
 

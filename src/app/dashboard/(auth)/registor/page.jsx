@@ -1,8 +1,8 @@
-
+import css from './page.module.css'
 
 const Registor = () => {
   return (
-    <div>Registor</div>
+    <div className={css.container}>Registor</div>
   )
 }
 

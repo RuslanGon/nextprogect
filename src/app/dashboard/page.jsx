@@ -1,8 +1,8 @@
-
+import css from './page.module.css'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className={css.container}>Dashboard</div>
   )
 }
 

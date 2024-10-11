@@ -1,8 +1,8 @@
-
+import css from './page.module.css'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div className={css.container}>Login</div>
   )
 }
 
