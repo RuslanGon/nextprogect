@@ -7,3 +7,8 @@
     width: max-content;
     color: white;
   }
+
+ .container:hover {
+  background-color: gold;
+  color: black;
+ } 
