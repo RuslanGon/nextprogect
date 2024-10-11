@@ -35,7 +35,15 @@ const links = [
 
 const Navbar = () => {
   return (
-    <navbar></navbar>
+    <nav>
+        <Link href='/'>My App</Link>
+        <div>
+            {links.map(link => (
+                <Link key={link.id} href={link.url}>{link.title}</Link>
+            ))}
+        </div>
+    </nav>
+    
   )
 }
 
