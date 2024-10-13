@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import css from './page.module.css'
+import DarckModelToggle from "../DarckModelToggle/DarckModelToggle.jsx";
 
 const links = [
     {
@@ -40,6 +41,7 @@ const Navbar = () => {
     <nav className={css.container}>
         <Link className={css.logo} href='/'>My App</Link>
         <div className={css.links}>
+          <DarckModelToggle />
             {links.map(link => (
                 <Link key={link.id} href={link.url}>{link.title}</Link>
             ))}
