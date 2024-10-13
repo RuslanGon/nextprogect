@@ -1,9 +1,11 @@
 import Link from "next/link";
-import css from "./page.module.css"; 
+import css from "./page.module.css";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/post", { cache: "no-store" });
+  const res = await fetch("http://localhost:3000/api/post", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -26,10 +28,14 @@ const Blog = async () => {
   return (
     <div className={css.mainContainer}>
       {posts.map((item) => (
-        <Link href={`blog/${item._id}`} className={css.container} key={item._id}>
+        <Link
+          href={`blog/${item._id}`}
+          className={css.container}
+          key={item._id}
+        >
           <div className={css.imageContainer}>
             <Image
-              src={`/img/${item.img}`} // Убедитесь, что изображение находится в папке public/img
+              src="/airobot.jpg" 
               alt={item.title}
               width={400}
               height={250}
