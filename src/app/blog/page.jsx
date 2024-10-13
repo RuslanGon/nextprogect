@@ -12,15 +12,12 @@ async function getData() {
   }
 
   const data = await res.json();
-  console.log("Fetched data:", data); // Логируем данные для отладки
-  return data; // Возвращаем массив постов
+  return data; 
 }
 
 const Blog = async () => {
   const posts = await getData();
 
-  // Проверка типа данных
-  console.log("Posts before map:", posts); // Логируем данные перед использованием map
   if (!Array.isArray(posts)) {
     throw new Error("Expected an array of posts");
   }

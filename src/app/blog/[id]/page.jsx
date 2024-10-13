@@ -2,7 +2,7 @@ import Image from "next/image.js";
 import css from "./page.module.css";
 
 async function getDataById(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, { cache: 'no-store' } );
+  const res = await fetch(`http://localhost:3000/api/post/${id}`, { cache: 'no-store' } );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -19,7 +19,9 @@ const BlogId = async ({params}) => {
         <div className={css.info}>
           <h1 className={css.title}>{data.title}</h1>
           <p className={css.desc}>{data.body}</p>
-          <p className={css.desc}>Avtor: {data.userId}</p>
+          <p className={css.desc}>Avtor: {data._id}</p>
+          <p className={css.desc}> {data.username}</p>
+          <p className={css.desc}> {data.content}</p>
           <div className={css.author}>
         <Image src='/romantic.jpg' alt="foto" width={570} height={250} className={css.image}/>
             <span className={css.username}></span>
