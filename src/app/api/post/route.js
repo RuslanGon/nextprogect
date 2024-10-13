@@ -1,13 +1,16 @@
 import Post from "@/models/Post.js";
 import connect from "@/utils/db.js";
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export const GET = async (req) => {
   try {
     await connect();
     const posts = await Post.find();
-    return NextResponse.json(JSON.stringify(posts), { status: 200});
+    return NextResponse.json(posts, { status: 200 }); // Возвращаем массив постов
   } catch (error) {
-    return NextResponse.json({ status: 500, message: "Error in response of DB" });
+    return NextResponse.json({
+      status: 500,
+      message: "Error in response of DB",
+    });
   }
 };
