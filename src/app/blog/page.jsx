@@ -29,6 +29,8 @@ const Blog = async () => {
           <div className={css.content}>
             <h1 className={css.title}>{item.title}</h1>
             <p className={css.desc}>{item.body}</p>
+            <p className={css.desc}> Avtor: {item.id}</p>
+
           </div>
         </Link>
       ))}
