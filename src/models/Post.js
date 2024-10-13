@@ -13,6 +13,7 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
-const Post = mongoose.model('Post', postSchema);
+// Проверяем, существует ли модель 'Post', перед её созданием
+const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
 
 export default Post;
