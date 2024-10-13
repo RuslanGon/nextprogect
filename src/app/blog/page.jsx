@@ -18,19 +18,12 @@ const Blog = async () => {
       {data.map((item) => (
         <Link href="blog/test" className={css.container} key={item.id}>
           <div className={css.imageContainer}>
-            <Image
-              src='/airobot.jpg'
-              alt=""
-              width={400}
-              height={250}
-              className={css.image}
-            />
+            <Image src='/airobot.jpg' alt="foto" width={400} height={250} className={css.image}/>
           </div>
           <div className={css.content}>
             <h1 className={css.title}>{item.title}</h1>
             <p className={css.desc}>{item.body}</p>
             <p className={css.desc}> Avtor: {item.id}</p>
-
           </div>
         </Link>
       ))}
