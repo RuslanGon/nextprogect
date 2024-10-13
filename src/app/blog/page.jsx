@@ -3,7 +3,7 @@ import css from "./page.module.css";
 import Image from "next/image.js";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", { cache: 'no-store' });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
