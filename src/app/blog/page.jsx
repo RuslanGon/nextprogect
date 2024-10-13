@@ -1,14 +1,25 @@
-import Link from 'next/link.js'
-import css from './page.module.css'
-import Image from 'next/image.js'
+import Link from "next/link.js";
+import css from "./page.module.css";
+import Image from "next/image.js";
 
-const Blog = () => {
+async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+const Blog = async () => {
+  const data = await getData();
+
   return (
     <div className={css.mainContainer}>
-        <Link href='blog/test'className={css.container} key='1'>
-        <div className={css.imageContainer}>
+      {data.map((item) => (
+        <Link href="blog/test" className={css.container} key={item.id}>
+          <div className={css.imageContainer}>
             <Image
-              // src={}
+              src='/airobot.jpg'
               alt=""
               width={400}
               height={250}
@@ -16,12 +27,13 @@ const Blog = () => {
             />
           </div>
           <div className={css.content}>
-            <h1 className={css.title}>Title</h1>
-            <p className={css.desc}>Desc</p>
+            <h1 className={css.title}>{item.title}</h1>
+            <p className={css.desc}>{item.body}</p>
           </div>
         </Link>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
