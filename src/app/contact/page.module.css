@@ -26,7 +26,7 @@
 
 @keyframes move {
   from {
-    transform: translateY(-15px);
+    transform: translateY(-55px);
   }
   to {
     transform: translateY(0px) scale(1.03);
