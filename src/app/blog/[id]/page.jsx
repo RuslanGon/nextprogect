@@ -1,6 +1,17 @@
 import Image from "next/image.js";
 import css from "./page.module.css";
 
+
+
+export async function generateMetadata({ params }) {
+  const post = await getDataById(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
+
 async function getDataById(id) {
   const res = await fetch(`http://localhost:3000/api/post/${id}`, { cache: 'no-store' } );
   if (!res.ok) {
