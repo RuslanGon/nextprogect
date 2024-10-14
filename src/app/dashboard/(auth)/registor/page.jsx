@@ -2,11 +2,14 @@
 import Link from 'next/link';
 import css from './page.module.css'
 import { useState } from 'react';
-import { headers } from 'next/headers.js';
+import { useRouter } from "next/navigation";
+
 
 const Registor = () => {
 
   const [error, setError] = useState(null)
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +17,7 @@ const Registor = () => {
     const email = e.target[1].value
     const password = e.target[2].value
     try {
-      const res = await fetch("/api/auth/registor", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
